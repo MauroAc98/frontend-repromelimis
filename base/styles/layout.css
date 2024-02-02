@@ -1,0 +1,220 @@
+/* ------CONTAINER------ */
+.layout_main_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding: 6rem 2rem 2rem 4rem;
+  transition: margin-left 0.2s;
+}
+
+@media (min-width: 992px) {
+  .layout_main_container {
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  .layout_main_container {
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+}
+
+.layout_main {
+  flex: 1 1 auto;
+}
+
+.layout_container {
+  background: #eff2f7;
+}
+
+.layout_container.layout_sidebar_inactive .layout_main_container {
+  margin-left: 0;
+  padding-left: 2rem;
+}
+/* --------END CONTAINER -----------*/
+
+/* --------SIDEBAR & MENU----------- */
+.layout_sidebar {
+  position: fixed;
+  width: 300px;
+  height: calc(100vh - 9rem);
+  z-index: 999;
+  overflow-y: auto;
+  user-select: none;
+  top: 6rem;
+  left: 2rem;
+  transition: transform 0.2s, left 0.2s;
+  background-color: var(--sidebar-background);
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02), 0px 0px 2px rgba(0, 0, 0, 0.05),
+    0px 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 991px) {
+  .layout_sidebar {
+    transform: translateX(-100%);
+    left: 0;
+    top: 0;
+    height: 100vh;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+/* VISTA EN CELULAR */
+@media (max-width: 991px) {
+  .layout_mobile_active .layout_sidebar {
+    transform: translateX(0) !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .layout_mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background-color: var(--maskbg);
+  }
+}
+
+@media (max-width: 991px) {
+  .layout_mobile_active .layout_mask {
+    display: block;
+    animation: fadein 0.2s;
+  }
+}
+
+.layout_menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  user-select: none;
+}
+
+.layout_menu .submenu {
+  margin-left: 1rem;
+}
+
+.layout_menu ul ul {
+  overflow: hidden;
+  max-height: 0;
+  border-radius: 12px;
+}
+
+.layout_root_menuitem > .layout_menuitem_root_text {
+  font-size: 0.857rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sidebar-root-title-color);
+  margin: 0.75rem 0;
+}
+
+.layout_menuitem_root_text > a {
+  display: none;
+}
+
+li.active_menuitem > a .layout_submenu_toggler {
+  transform: rotate(-180deg);
+}
+li.active_menuitem > ul {
+  max-height: none;
+}
+.layout_sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.layout_sidebar ul a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  outline: 0 none;
+  color: var(--sidebar-item-color);
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  transition: background-color 2s, box-shadow 2s;
+}
+
+.layout_menuitem_icon {
+  margin-right: 0.5rem;
+}
+
+.layout_submenu_toggler {
+  font-size: 75%;
+  margin-left: auto;
+  transition: transform 2s;
+}
+
+.layout_submenu_toggler.rotated_icon .layout_menuitem_icon {
+  transform: rotate(90deg);
+}
+
+.layout_submenu_toggler.active_route {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.layout_submenu_toggler:hover {
+  background-color: var(--surface-hover);
+}
+
+.layout_sidebar ul a > ul {
+  overflow: hidden;
+  max-height: 0;
+  border-radius: 5px;
+}
+
+.layout_sidebar ul a > ul li a {
+  margin-left: 1rem;
+}
+
+.layout_submenu_enter_active {
+  max-height: 1000px !important;
+  transition: max-height 1s ease-in-out;
+}
+
+.layout_submenu_enter_done {
+  max-height: 1000px !important;
+}
+
+.layout_submenu_exit {
+  max-height: 0px !important;
+}
+
+.layout_submenu_exit_active {
+  overflow: hidden;
+  max-height: 0 !important;
+  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+}
+
+/* OCULTAR/MOSTRAR SIDEBAR */
+.layout_container.layout_sidebar_inactive .layout_sidebar {
+  transform: translateX(-100%);
+  left: 0;
+}
+
+.layout_submenu_toggler {
+  font-size: 75%;
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+
+/* ICONO DE SUBEMUES */
+.active_menuitem > a .layout_submenu_toggler {
+  transform: rotate(-180deg);
+}
+
+.layout_menuitem_text {
+  font-size: 14px;
+}
+
+/* --------SIDEBAR & MENU----------- */

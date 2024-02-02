@@ -1,0 +1,136 @@
+.layout_topbar {
+  position: fixed;
+  height: 70px;
+  z-index: 997;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0 2rem;
+  background: var(--topbar-background);
+  transition: left 2s;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02), 0px 0px 2px rgba(0, 0, 0, 0.05),
+    0px 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.layout_topbar_logo {
+  display: flex;
+  align-items: center;
+  color: var(--surface-900);
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 300px;
+  border-radius: 12px;
+}
+
+.layout_topbar_button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: var(--topbar-hamburger-color);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.layout_topbar_button:hover {
+  color: var(--topbar-hamburger-color-hover);
+  background-color: var(--topbar-hamburger-background-hover);
+}
+
+.layout_topbar_user_button {
+  color: var(--topbar-userbutton-color);
+  background-color: var(--topbar-userbutton-background);
+}
+
+.layout_topbar_user_button:hover {
+  color: var(--topbar-userbutton-color-hover) !important;
+  background-color: var(--topbar-userbutton-background-hover) !important;
+}
+
+.layout_topbar_icon {
+  font-size: 1.5rem;
+}
+
+.layout_topbar_button .layout_topbar span {
+  font-size: 1rem;
+  display: none;
+}
+
+.layout_topbar_button:focus {
+  box-shadow: none;
+}
+
+.layout_topbar_user_icon {
+  color: var(--text-color);
+  background-color: var(--surface-hover);
+}
+
+.layout_menu_button {
+  margin-right: 30px;
+}
+
+.layout_menu_button:focus {
+  box-shadow: none;
+}
+
+.layout_topbar_menu_button {
+  display: none;
+}
+.layout_topbar_menu_button i {
+  font-size: 1.25rem;
+}
+
+.layout_topbar_menu {
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+/* ORDEN DE ELEMENTOS EN VISTA MOBILE */
+@media (max-width: 991px) {
+  .layout_menu_button {
+    margin-right: 20px;
+    order: 1;
+  }
+  .layout_topbar_logo {
+    width: auto;
+    order: 2;
+  }
+  .layout_topbar_menu {
+    width: auto;
+    order: 3;
+    margin-left: 0;
+  }
+  .layout_topbar {
+    justify-content: space-between;
+  }
+}
+/* END ORDEN DE ELEMENTOS */
+
+@media (max-width: 767px) {
+  .layout_topbar_logo span {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .layout_topbar_logo img {
+    height: 26px;
+  }
+}
+
+.user_name {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+@media (max-width: 991px) {
+  .user_name {
+    display: none;
+  }
+}

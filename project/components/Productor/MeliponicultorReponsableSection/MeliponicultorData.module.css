@@ -1,0 +1,16 @@
+.div_data {
+  border: 1px solid var(--surface-border);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.div_x {
+  position: relative;
+}
+
+.icon_x {
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

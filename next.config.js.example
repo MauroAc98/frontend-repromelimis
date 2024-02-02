@@ -1,0 +1,15 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  env: {
+    google_key: "AIzaSyDUNDeNAtAzqYM2ATC8Utmo4wK177Zx0bA", // key para api de google
+    url_front: 'http://localhost:3000', //url de nuestro frontend
+    url_back: 'http://localhost:8000/api', //url de nuestro backend
+    project_title_head: 'ReProMeliMis', //titulo que ira en el head
+    project_title_topbar: 'ReProMeliMis', //titulo que ira en el topbar
+    topbar_logo: "/isotipo_rup_verde.png", //logo que ira en el topbar
+    icon: "/isotipo_rup.ico", //icono que ira en nuestro head
+  }
+}
+
+module.exports = nextConfig

@@ -1,0 +1,50 @@
+import { addLocale, locale } from 'primereact/api';
+
+export function spanishLanguage() {
+    addLocale('es', {
+        firstDayOfWeek: 1,
+        dayNames: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
+        dayNamesShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
+        dayNamesMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
+        monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+        monthNamesShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+        today: 'Hoy',
+        clear: 'Limpiar',
+        startsWith: 'Empezar con',
+        contains: 'Contiene',
+        notContains: 'No contiene',
+        endsWith: 'Termina con',
+        equals: 'Es igual',
+        notEquals: 'No es igual',
+        noFilter: 'Sin filtro',
+        lt: 'Menor que',
+        lte: 'Menor que o igual a',
+        gt: 'Mayor que',
+        gte: 'Mayor que o igual a',
+        dateIs: 'La fecha es',
+        dateIsNot: 'La fecha no es',
+        dateBefore: 'La fecha es anterior',
+        dateAfter: 'La fecha es posterior',
+        custom: 'Customizado',
+        apply: 'Aplicar',
+        matchAll: 'Coincidir con todo',
+        matchAny: 'Coincidir con cualquiera',
+        addRule: 'Añadir regla',
+        removeRule: 'Remover regla',
+        accept: 'Si',
+        reject: 'No',
+        choose: 'Elegir',
+        upload: 'Subir',
+        cancel: 'Cancelar',
+        weekHeader: 'Wk',
+        dateFormat: 'dd/mm/yy',
+        weak: 'Debil',
+        medium: 'Medio',
+        strong: 'Fuerte',
+        passwordPrompt: 'Ingresar una clave',
+        emptyFilterMessage: 'No hay opciones disponibles',
+        emptyMessage: 'Sin resultados'
+    });
+
+    locale('es');
+}
